@@ -5,68 +5,151 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
+
     <LinearLayout
+        android:id="@+id/main_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
-        <Button
-            android:id="@+id/btn_pic"
-            android:text="获取图片"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-            <Button
-                android:id="@+id/send_btn"
-                android:text="发送命令"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="间隔"/>
-            <EditText
-                android:text=""
-                android:id="@+id/ed_time"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-            <TextView
-                android:text="秒"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-        </LinearLayout>
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-            <Button
-                android:id="@+id/get_btn"
-                android:text="获取数据"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="当前间隔"/>
-            <TextView
-                android:id="@+id/tv_time"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
-
-        </LinearLayout>
-        <Button
-            android:id="@+id/photo_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="拍照"/>
-
+        android:orientation="vertical"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        app:layout_constraintEnd_toEndOf="parent">
 
         <ImageView
             android:id="@+id/pic"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="272dp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_pic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="获取图片" />
+
+            <Button
+                android:id="@+id/photo_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="拍照" />
+            <Button
+                android:id="@+id/door_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="开门" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/get_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="获取数据" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="温度" />
+
+            <TextView
+                android:id="@+id/tv_temp"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="湿度" />
+
+            <TextView
+                android:id="@+id/tv_hum"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="门状态" />
+
+            <TextView
+                android:id="@+id/tv_door"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content" />
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="温度下限" />
+
+            <EditText
+                android:id="@+id/et_Ltemp"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:text="" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="温度上限" />
+
+            <EditText
+                android:id="@+id/et_Htemp"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:text="" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="湿度下限" />
+
+            <EditText
+                android:id="@+id/et_Lhum"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:text="" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="湿度上限" />
+
+            <EditText
+                android:id="@+id/et_Hhum"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:text="" />
+
+        </LinearLayout>
+        <Button
+            android:id="@+id/send_btn"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="修改阈值" />
 
     </LinearLayout>
 
