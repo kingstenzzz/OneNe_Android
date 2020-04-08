@@ -116,20 +116,16 @@ public class MainActivity extends AppCompatActivity {
         et_Lhum.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
             }
-
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
                 if(!charSequence.toString().isEmpty()) {
                     if (Integer.parseInt(charSequence.toString()) < 0 || Integer.parseInt(charSequence.toString()) > 100) {
-
                         Toast.makeText(getApplicationContext(), "阈值范围为0-100,重新输入", Toast.LENGTH_LONG).show();
                         et_Lhum.setText("");
                     }
 
                 }
-
             }
 
             @Override
@@ -173,13 +169,13 @@ public class MainActivity extends AppCompatActivity {
         send_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                main_layout.requestFocus();//取消焦点
                 cmd1= "Temp_Max:"+et_Htemp.getText().toString();
                 cmd2= "Temp_Min:"+et_Ltemp.getText().toString();
                 cmd3= "Hum_Max:"+et_Hhum.getText().toString();
                 cmd4= "Hum_Min:"+et_Lhum.getText().toString();
                 new  MyThread(MainActivity.this).execute("cmd",cmd1,cmd2,cmd3,cmd4);
-                main_layout.requestFocus();//取消焦点
+
 
             }
         });

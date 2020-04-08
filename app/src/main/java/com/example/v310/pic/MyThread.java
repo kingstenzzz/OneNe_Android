@@ -36,7 +36,7 @@ public class MyThread extends AsyncTask <String,Void,String> {
             if(MainActivity.Ht_flag) {api.postcmd(strings[1]);MainActivity.Ht_flag=false;}
             if(MainActivity.Lt_flag){api.postcmd(strings[2]);MainActivity.Lt_flag=false;}
             if(MainActivity.Hh_flag){api.postcmd(strings[3]);MainActivity.Hh_flag=false;}
-            if(MainActivity.Lh_flag){api.postcmd(strings[4]);MainActivity.Lt_flag=false;}
+            if(MainActivity.Lh_flag){api.postcmd(strings[4]);MainActivity.Lh_flag=false;}
 
         }
         else if (strings[0].equals("photo"))
