@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
     static ImageView IV_PIC;
     public Button get_btn,send_btn,get_pic,pic_btn,door_btn;
     static EditText et_Ltemp,et_Htemp,et_Lhum,et_Hhum;
-    static TextView tv_temp,tv_hum,tv_door;
+    static TextView tv_temp,tv_hum,tv_door,tv_fire;
     String cmd="",cmd1,cmd2,cmd3,cmd4;
      static  boolean Ht_flag,Lt_flag,Hh_flag,Lh_flag;
      LinearLayout main_layout;
@@ -39,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
         tv_temp=findViewById(R.id.tv_temp);
         tv_hum=findViewById(R.id.tv_hum);
         tv_door=findViewById(R.id.tv_door);
+        tv_fire=findViewById(R.id.tv_fire);
         pic_btn=findViewById(R.id.photo_btn);
         main_layout=findViewById(R.id.main_layout);
 
@@ -64,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void afterTextChanged(Editable editable) {
-                Hh_flag=true;
+                Ht_flag=true;
                 Log.e("1", "changed");
 
             }

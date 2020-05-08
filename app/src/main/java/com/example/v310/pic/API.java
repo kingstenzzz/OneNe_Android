@@ -21,7 +21,7 @@ import java.net.URL;
 public    class API {
     final String DeviceID = "30964714";//你的平台id
     final String ApiKey = "Uv=e=yMBymo8In9FVA4Ub16Oleo=";
-    String temp="0",hum="0",door,H_temp,L_temp,H_hum,L_hum;
+    String temp="0",hum="0",door,H_temp,L_temp,H_hum,L_hum,fire;
 
 
 
@@ -50,15 +50,14 @@ public    class API {
                 }
                 is.close();//关闭
                 os.close();
-
                 JSONObject root = new JSONObject(os.toString());
                 JSONArray array =root.getJSONArray("data");
 
                 JSONObject object = array.getJSONObject(0);
 
-                    temp = object.optString("current_value", null);
+                    hum = object.optString("current_value", null);
                     object = array.getJSONObject(1);
-                    hum = object.optString("current_value");
+                    temp = object.optString("current_value");
                     object = array.getJSONObject(2);
                     door = object.optString("current_value");
                     object = array.getJSONObject(3);
@@ -69,7 +68,9 @@ public    class API {
                     H_hum = object.optString("current_value");
                     object = array.getJSONObject(6);
                     L_hum = object.optString("current_value");
-                    respon="temp:"+temp+"hum:"+hum+"door"+door;
+                    object = array.getJSONObject(7);
+                    fire = object.optString("current_value");
+                    respon="temp:"+temp+"hum:"+hum+"door"+door+"fire"+fire;
                     Log.e("1", root.toString());
 
 

@@ -51,7 +51,7 @@ public class MyThread extends AsyncTask <String,Void,String> {
         }
         else if (strings[0].equals("get"))
         {
-            data=api.Getvalue(",Humidity,Temperature,Door,Temp_Max,Temp_Min,Hum_Max,Hum_Min");//time数据流
+            data=api.Getvalue(",Humidity,Temperature,Door:,Temp_Max,Temp_Min,Hum_Max,Hum_Min,Fire");//time数据流
         }
         return strings[0];
     }
@@ -78,9 +78,12 @@ public class MyThread extends AsyncTask <String,Void,String> {
             MainActivity.tv_temp.setText(api.temp+"度");
             MainActivity.tv_hum.setText(api.hum+"%");
             if(api.door.equals("1"))
-                MainActivity.tv_door.setText("开");
+            MainActivity.tv_door.setText("开");
             else
-                MainActivity.tv_door.setText("关");
+            MainActivity.tv_door.setText("关");
+            if(api.fire.equals("1"))
+                MainActivity.tv_fire.setText("有");
+            else MainActivity.tv_fire.setText("无");
             MainActivity.et_Htemp.setText(api.H_temp);
             MainActivity.et_Ltemp.setText(api.L_temp);
             MainActivity.et_Hhum.setText(api.H_hum);
